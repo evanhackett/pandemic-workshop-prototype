@@ -1,0 +1,16 @@
+{
+  "name": "workshops",
+  "version": "1.0.0",
+  "description": "1. Grid 1. Canvas  1. Bumper Dots",
+  "main": "index.js",
+  "dependencies": {
+    "watchify": "^3.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watchify index.js -o bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
