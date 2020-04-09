@@ -21,3 +21,8 @@
 * look into request animiation frame?
 * * slows down the longer its been running
 * WebGL?
+
+## The future
+
+* Podcast about the observer patern that leads to the workshop
+* Probably release this one frees
