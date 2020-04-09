@@ -3,18 +3,33 @@ const drawGrid = require('./grid-to-canvas.js')
 const canvas = document.getElementById('canvas')
 
 const GRID_RESOLUTION = 50
+const NUM_ACTORS = 100
+const INTERVAL = 100
 
-const NUM_ACTORS = 3 // this is hard coded rn
 
 const red = () => ({ r: 255, g: 0, b: 0 })
 const green = () => ({ r: 0, g: 255, b: 0 })
 const blue = () => ({ r: 0, g: 0, b: 255 })
 
+function makeActors(numActors) {
+
+  const actors = []
+
+  for (let i = 0; i < numActors; i++) {
+    actors.push({
+      x: Math.floor(Math.random() * GRID_RESOLUTION),
+      y: Math.floor(Math.random() * GRID_RESOLUTION),
+      colors: red()
+    })
+  }
+
+  return actors
+}
+
 function actorsToGrid(actors) {
   const grid = Array(GRID_RESOLUTION).fill(0).map(x => Array(GRID_RESOLUTION).fill(0))
 
   actors.forEach(actor => {
-    console.log(actor)
     grid[actor.x][actor.y] = actor
   })
 
@@ -34,13 +49,33 @@ function moveActors(actors) {
 
     actor.x = wrapCoord(actor.x + directions[randomIndexX])
     actor.y = wrapCoord(actor.y + directions[randomIndexY])
+  })
 
+  actors.forEach(actor => {
+    if (isInfected(actor)) {
+      actors.forEach(other => {
+        if (actor !== other) {
+          if ((actor.x === other.x) && (actor.y === other.y)) {
+            infect(other)
+          }
+        }
+      })
+    }
   })
 }
 
-const actors = [{ x: 1, y: 1, colors: red() }, { x: 25, y: 25, colors: green() }, { x: 3, y: 3, colors: blue() }]
+function isInfected(actor) {
+  return actor.colors.g === 255
+}
 
-const INTERVAL = 250
+function infect(actor) {
+  actor.colors = green()
+}
+
+
+const actors = makeActors(NUM_ACTORS)
+actors.push({ x: 25, y: 25, colors: green() })
+
 
 const interval = setInterval(function () {
 
