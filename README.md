@@ -7,7 +7,8 @@
 
 ## Next steps
 
-* function for populating actors array with actors at random locations
-* init all actors to red except 1 infected actor
-* write logic for spreading the infection (change color of actors that come into contact with infected actor)
+* function for populating actors array with actors at random locations ✅
+* * This nested loops is not that slow
+* init all actors to red except 1 infected actor ✅
+* write logic for spreading the infection (change color of actors that come into contact with infected actor) ✅
 * bonus points for within 6 cells corona style!
