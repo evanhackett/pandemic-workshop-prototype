@@ -15,6 +15,10 @@
 * bonus points for within 6 cells corona style!
 
 # Work session three, Saturday 4/11 or Sunday 4/12
+
+* Refactor actor to class ✅
+* Moved constants to their own file ✅
+
 ## Next steps
 
 * The medics and the OBSERVER PATTERN!!
