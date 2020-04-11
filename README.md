@@ -21,10 +21,12 @@
 
 ## Next steps
 
-* The medics and the OBSERVER PATTERN!!
+* The medics and the OBSERVER PATTERN!!!
 * look into request animiation frame?
 * * slows down the longer its been running
 * WebGL?
+* Do we even need the medic? Have them refactor to publish subscibe from what we have now
+* Rethink what the assignment is. What should the student do?
 
 ## The future
 
