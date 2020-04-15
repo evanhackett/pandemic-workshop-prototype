@@ -1,6 +1,6 @@
 const drawGrid = require('./grid-to-canvas.js')
 const constants = require('./constants.js')
-const Actor = require('./actor.js')
+const { Actor, Infected } = require('./actor.js')
 
 const canvas = document.getElementById('canvas')
 const dnode_infectedCount = document.getElementById('infectedCount')
@@ -43,43 +43,22 @@ function actorsToGrid(actors) {
   return grid
 }
 
-function updateInfectedCount() {
-  infected++
-}
+// function updateInfectedCount() {
+//   infected++
+// }
 
 function moveActors(actors) {
   actors.forEach(actor => {
-    actor.move()
-  })
-
-
-  actors.forEach(actor => {
-    if (isInfected(actor)) {
-      actors.forEach(other => {
-        if (actor !== other && !isInfected(other)) {
-          if ((actor.x === other.x) && (actor.y === other.y)) {
-            infect(other)
-          }
-        }
-      })
-    }
+    actor.move(actors)
   })
 }
 
-function isInfected(actor) {
-  return actor.color.r === 255
-}
-
-function infect(actor) {
-  actor.color = constants.RED()
-  updateInfectedCount()
-}
 
 
 const actors = makeActors(constants.NUM_ACTORS)
 
 for (let i = 0; i < constants.START_INFECTED; i++) {
-  infect(actors[i])
+  actors[i] = new Infected({ x: actors[i].x, y: actors[i].y })
 }
 
 

@@ -1,6 +1,6 @@
 const constants = require('./constants.js')
 
-module.exports = class Actor {
+class Actor {
   constructor(position) {
     this.x = position.x
     this.y = position.y
@@ -19,4 +19,37 @@ module.exports = class Actor {
     this.x = wrapCoord(this.x + directions[randomIndexX])
     this.y = wrapCoord(this.y + directions[randomIndexY])
   }
+}
+
+class Infected extends Actor {
+  constructor(position) {
+    super(position)
+    this.color = constants.RED()
+  }
+
+  static isInfected(actor) {
+    return actor.constructor.name === 'Infected'
+  }
+
+  infect(actors, other, i) {
+    actors[i] = new Infected({ x: other.x, y: other.y })
+    // updateInfectedCount()
+  }
+
+  move(actors) {
+    super.move()
+
+    actors.forEach((other, i) => {
+      if (this !== other && !Infected.isInfected(other)) {
+        if ((this.x === other.x) && (this.y === other.y)) {
+          this.infect(actors, other, i)
+        }
+      }
+    })
+  }
+}
+
+module.exports = {
+  Actor,
+  Infected
 }
