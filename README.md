@@ -22,10 +22,16 @@
 # Work session four, Tuesday 4/14
 
 * Refactor Infected to class ✅
-* The medics and the OBSERVER PATTERN!!!
+* Added Medic Class without Observer ✅
+* Medics go to closest Infected ✅
+
+# Work session four, Tuesday 4/16
+
 
 ## Next steps
-
+* Make it so medics do not share the same target, somehow.
+* The medics and the OBSERVER PATTERN???
+* Make the borders count
 * look into request animiation frame?
 * * slows down the longer its been running
 * WebGL?
