@@ -25,10 +25,11 @@
 * Added Medic Class without Observer ✅
 * Medics go to closest Infected ✅
 
-# Work session four, Tuesday 4/16
+# Work session four, Thursday 4/16
 
 
 ## Next steps
+* Special event listening system that is observered by other things. eg graphs or counters 
 * Make it so medics do not share the same target, somehow.
 * The medics and the OBSERVER PATTERN???
 * Make the borders count
