@@ -31,18 +31,18 @@ class Infected extends Actor {
     return actor.constructor.name === 'Infected'
   }
 
-  infect(actors, other, i) {
+  static infect(actors, other, i, cb) {
     actors[i] = new Infected({ x: other.x, y: other.y })
-    // updateInfectedCount()
+    cb()
   }
 
-  move(actors) {
+  move(actors, cb) {
     super.move()
 
     actors.forEach((other, i) => {
       if (this !== other && !Infected.isInfected(other)) {
         if ((this.x === other.x) && (this.y === other.y)) {
-          this.infect(actors, other, i)
+          Infected.infect(actors, other, i, cb)
         }
       }
     })

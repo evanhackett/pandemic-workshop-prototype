@@ -43,13 +43,13 @@ function actorsToGrid(actors) {
   return grid
 }
 
-// function updateInfectedCount() {
-//   infected++
-// }
+function updateInfectedCount() {
+  infected++
+}
 
 function moveActors(actors) {
   actors.forEach(actor => {
-    actor.move(actors)
+    actor.move(actors, updateInfectedCount)
   })
 }
 
@@ -58,7 +58,7 @@ function moveActors(actors) {
 const actors = makeActors(constants.NUM_ACTORS)
 
 for (let i = 0; i < constants.START_INFECTED; i++) {
-  actors[i] = new Infected({ x: actors[i].x, y: actors[i].y })
+  Infected.infect(actors, actors[i], i, updateInfectedCount)
 }
 
 
