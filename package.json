@@ -9,7 +9,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx watchify index.js -o bundle.js"
+    "watch": "npx watchify index.js -o bundle.js",
+    "start": "npm run watch"
   },
   "author": "",
   "license": "ISC"

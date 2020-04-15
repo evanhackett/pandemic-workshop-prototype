@@ -33,14 +33,14 @@ class Infected extends Actor {
 
   static infect(actors, other, i, cb) {
     actors[i] = new Infected({ x: other.x, y: other.y })
-    cb()
+    cb('infect')
   }
 
   move(actors, cb) {
     super.move()
 
     actors.forEach((other, i) => {
-      if (this !== other && !Infected.isInfected(other)) {
+      if (this !== other && !Infected.isInfected(other) && other.constructor.name !== 'Medic') {
         if ((this.x === other.x) && (this.y === other.y)) {
           Infected.infect(actors, other, i, cb)
         }
@@ -49,7 +49,32 @@ class Infected extends Actor {
   }
 }
 
+class Medic extends Actor {
+  constructor(position) {
+    super(position)
+    this.color = constants.WHITE()
+  }
+
+  static cure(actors, other, i, cb) {
+    actors[i] = new Actor({ x: other.x, y: other.y })
+    cb('cure')
+  }
+
+  move(actors, cb) {
+    super.move()
+
+    actors.forEach((other, i) => {
+      if (this !== other && Infected.isInfected(other)) {
+        if ((this.x === other.x) && (this.y === other.y)) {
+          Medic.cure(actors, other, i, cb)
+        }
+      }
+    })
+  }
+}
+
 module.exports = {
   Actor,
-  Infected
+  Infected,
+  Medic
 }

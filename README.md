@@ -19,9 +19,13 @@
 * Refactor actor to class ✅
 * Moved constants to their own file ✅
 
+# Work session four, Tuesday 4/14
+
+* Refactor Infected to class ✅
+* The medics and the OBSERVER PATTERN!!!
+
 ## Next steps
 
-* The medics and the OBSERVER PATTERN!!!
 * look into request animiation frame?
 * * slows down the longer its been running
 * WebGL?

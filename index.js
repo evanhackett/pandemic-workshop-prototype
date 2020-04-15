@@ -1,6 +1,6 @@
 const drawGrid = require('./grid-to-canvas.js')
 const constants = require('./constants.js')
-const { Actor, Infected } = require('./actor.js')
+const { Actor, Infected, Medic } = require('./actor.js')
 
 const canvas = document.getElementById('canvas')
 const dnode_infectedCount = document.getElementById('infectedCount')
@@ -43,8 +43,12 @@ function actorsToGrid(actors) {
   return grid
 }
 
-function updateInfectedCount() {
-  infected++
+function updateInfectedCount(event) {
+  if (event === 'infect') {
+    infected++
+  } else {
+    infected--
+  }
 }
 
 function moveActors(actors) {
@@ -59,6 +63,13 @@ const actors = makeActors(constants.NUM_ACTORS)
 
 for (let i = 0; i < constants.START_INFECTED; i++) {
   Infected.infect(actors, actors[i], i, updateInfectedCount)
+}
+
+for (let i = 0; i < constants.START_MEDICS; i++) {
+  actors.push(new Medic({
+    x: Math.floor(Math.random() * constants.GRID_RESOLUTION),
+    y: Math.floor(Math.random() * constants.GRID_RESOLUTION)
+  }))
 }
 
 
