@@ -6,9 +6,12 @@
   "dependencies": {
     "watchify": "^3.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx tape ./test/**/*.js | npx tap-spec",
     "watch": "npx watchify index.js -o bundle.js",
     "start": "npm run watch"
   },

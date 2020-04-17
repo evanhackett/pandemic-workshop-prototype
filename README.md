@@ -26,20 +26,17 @@
 * Medics go to closest Infected ✅
 
 # Work session four, Thursday 4/16
-
+* Make the borders count
+* Refactor with TDD & tests in general
 
 ## Next steps
+* Rethink what the assignment is. What should the student do?
 * Special event listening system that is observered by other things. eg graphs or counters 
 * Make it so medics do not share the same target, somehow.
 * The medics and the OBSERVER PATTERN???
-* Make the borders count
 * look into request animiation frame?
-* * slows down the longer its been running
 * WebGL?
-* Do we even need the medic? Have them refactor to publish subscibe from what we have now
-* Rethink what the assignment is. What should the student do?
 
 ## The future
-
 * Podcast about the observer patern that leads to the workshop
 * Probably release this one frees
