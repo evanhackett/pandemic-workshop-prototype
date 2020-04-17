@@ -22,3 +22,22 @@ test('actor should be drawn to canvas in the right place', function (t) {
   app(canvas, actors)
   t.end()
 })
+
+test('All actors in the actor list should be drawn to canvas', function (t) {
+  const actors = [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 0 }]
+  const testState = []
+  const canvas = {
+    getContext: () => {
+      return {
+        fillRect: (x, y, width, height) => {
+          testState.push({ x: x, y: y })
+        },
+        fillStyle: () => { },
+      }
+    },
+    width: 100
+  }
+  app(canvas, actors)
+  t.deepEqual(testState, actors)
+  t.end()
+})
