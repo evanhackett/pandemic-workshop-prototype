@@ -2,10 +2,11 @@ const draw = require('../src/draw')
 const test = require('tape')
 const constants = require('../src/constants')
 
-test('actor should be drawn to canvas in the right place', function (t) {
-  const actors = [{ x: 1, y: 1 }]
+test('actor should be drawn to canvas in the right place with the right argument', function (t) {
+  const actors = [{ x: 1, y: 1, color: constants.RED() }]
   const canvas = {
-    getContext: () => {
+    getContext: (arg) => {
+      t.equal(arg, '2d')
       return {
         fillRect: (x, y, width, height) => {
           const cellSize = canvas.width / constants.GRID_RESOLUTION
@@ -22,6 +23,10 @@ test('actor should be drawn to canvas in the right place', function (t) {
   draw(canvas, actors)
   t.end()
 })
+
+function colorToRGBString(color) {
+  return `rgb(${color.r},${color.g},${color.b})`
+}
 
 test('All actors in the actor list should be drawn to canvas with the right color', function (t) {
   const actors = [
@@ -43,7 +48,9 @@ test('All actors in the actor list should be drawn to canvas with the right colo
     },
     width: 100
   }
+
   draw(canvas, actors)
-  t.deepEqual(testState, actors)
+
+  t.deepEqual(testState, actors.map(actor => ({ x: actor.x, y: actor.y, color: colorToRGBString(actor.color) })))
   t.end()
 })

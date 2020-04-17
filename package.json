@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "npx tape ./test/**/*.js | npx tap-spec",
-    "watch": "npx watchify index.js -o bundle.js",
+    "watch": "npx watchify src/index.js -o bundle.js",
     "start": "npm run watch"
   },
   "author": "",
