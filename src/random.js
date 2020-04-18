@@ -1,16 +1,16 @@
-function randomF({ GRID_RESOLUTION, random }) {
+function randomF({ GRID_RESOLUTION, randomPos, randomDir }) {
   return {
     position: () => {
       return {
-        x: Math.floor(random() * GRID_RESOLUTION),
-        y: Math.floor(random() * GRID_RESOLUTION),
+        x: Math.floor(randomPos() * GRID_RESOLUTION),
+        y: Math.floor(randomPos() * GRID_RESOLUTION),
       }
     },
     direction: () => {
       const directions = [-1, 0, 1]
       return {
-        x: directions[Math.round(random() * 2)],
-        y: directions[Math.round(random() * 2)],
+        x: directions[Math.round(randomDir() * 2)],
+        y: directions[Math.round(randomDir() * 2)],
       }
     }
   }
