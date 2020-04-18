@@ -25,11 +25,16 @@
 * Added Medic Class without Observer ✅
 * Medics go to closest Infected ✅
 
-# Work session four, Thursday 4/16
-* Make the borders count
-* Refactor with TDD & tests in general
+# Work session five, Thursday 4/16
+* Start Refactor with TDD & tests in general ✅
+
+# Work session six, Thursday 4/16
+* Added simulation class ✅
+* Added random module ✅
+* dependency injection on a module level ✅
 
 ## Next steps
+* Makes walls count
 * Rethink what the assignment is. What should the student do?
 * Special event listening system that is observered by other things. eg graphs or counters 
 * Make it so medics do not share the same target, somehow.
