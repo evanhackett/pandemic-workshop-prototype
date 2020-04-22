@@ -1,7 +1,7 @@
 const constants = require('./constants')
 const draw = require('./draw')
 const random = require('./random')({ randomDir: Math.random, randomPos: Math.random, GRID_RESOLUTION: constants.GRID_RESOLUTION })
-const Simulation = require('./simulation')({ NUM_ACTORS: constants.NUM_ACTORS, RED: constants.RED, random })
+const Simulation = require('./simulation')({ NUM_ACTORS: constants.NUM_ACTORS, colors: constants.colors, random })
 
 const simulation = new Simulation()
 

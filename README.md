@@ -35,6 +35,7 @@
 
 # Work session six, Thursday 4/21
 * Clear the canvas on redraw ✅
+* Refactored the colors constant to be it's own object with frozen color sub objects
 
 ## Next steps
 * Makes walls count
