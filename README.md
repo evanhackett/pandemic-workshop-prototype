@@ -28,17 +28,18 @@
 # Work session five, Thursday 4/16
 * Start Refactor with TDD & tests in general ✅
 
-# Work session six, Thursday 4/16
+# Work session six, Saturday 4/18
 * Added simulation class ✅
 * Added random module ✅
 * dependency injection on a module level ✅
 
-# Work session six, Thursday 4/21
+# Work session six, Tuesday 4/21
 * Clear the canvas on redraw ✅
 * Refactored the colors constant to be it's own object with frozen color sub objects ✅
 * Refactor simulaton to ES5 ✅
-* Add an infected actor to infect the other actors 
 
+# Work sesison seven, Thursday 4/23
+* Add an infected actor to infect the other actors 
 
 ## Next steps
 * Makes walls count
