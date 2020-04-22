@@ -33,6 +33,9 @@
 * Added random module ✅
 * dependency injection on a module level ✅
 
+# Work session six, Thursday 4/21
+* Clear the canvas on redraw ✅
+
 ## Next steps
 * Makes walls count
 * Rethink what the assignment is. What should the student do?

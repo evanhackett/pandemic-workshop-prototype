@@ -16,9 +16,11 @@ test('actor should be drawn to canvas in the right place with the right argument
           t.equal(height, cellSize)
         },
         fillStyle: () => { },
+        clearRect: () => { },
       }
     },
-    width: 100
+    width: 100,
+    height: 100,
   }
   draw(canvas, actors)
   t.end()
@@ -42,15 +44,41 @@ test('All actors in the actor list should be drawn to canvas with the right colo
           testState.push({ x: x, y: y, color: ctx.fillStyle })
         },
         fillStyle: null,
+        clearRect: () => { },
       }
 
       return ctx
     },
-    width: 100
+    width: 100,
+    height: 100,
   }
 
   draw(canvas, actors)
 
   t.deepEqual(testState, actors.map(actor => ({ x: actor.x, y: actor.y, color: colorToRGBString(actor.color) })))
+  t.end()
+})
+
+test('Draw should clear the canvas when invoked', t => {
+  t.plan(4)
+
+  const canvas = {
+    getContext: () => {
+      const ctx = {
+        fillRect: () => { },
+        fillStyle: null,
+        clearRect: (x, y, width, height) => {
+          t.equal(x, 0)
+          t.equal(y, 0)
+          t.equal(width, canvas.width)
+          t.equal(height, canvas.width)
+        }
+      }
+      return ctx
+    },
+    width: 100,
+    height: 100
+  }
+  draw(canvas, [])
   t.end()
 })
