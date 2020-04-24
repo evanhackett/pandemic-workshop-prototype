@@ -38,7 +38,11 @@
 * Refactored the colors constant to be it's own object with frozen color sub objects ✅
 * Refactor simulaton to ES5 ✅
 
-# Work sesison seven, Thursday 4/23
+# Work session seven, Thursday 4/23
+* Deep dive on destructuring, scope, closures and mutablilty ✅👍
+* Made actor module ✅
+
+# Work sesison eight, Weekend 4/2-
 * Add an infected actor to infect the other actors 
 
 ## Next steps

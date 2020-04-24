@@ -1,21 +1,20 @@
-const cloneDeep = require('lodash').cloneDeep
+const actorF = require('./actor')
 
-module.exports = function ({ NUM_ACTORS, colors, random }) {
+module.exports = function ({ NUM_ACTORS, random }) {
+
+  const actor = actorF({ randomDir: random.direction })
+
   function simulation() {
     const actors = []
 
     for (let i = 0; i < NUM_ACTORS; i++) {
       let { x, y } = random.position()
-      actors.push({ x, y, color: colors.GREEN })
+      actors.push(actor(x, y))
     }
 
     function tick(cb) {
-      actors.forEach(actor => {
-        let { x, y } = random.direction()
-        actor.x += x
-        actor.y += y
-      })
-      cb(Object.freeze(cloneDeep(actors)))
+      const newPositions = actors.map(actor => actor.move())
+      cb(Object.freeze(newPositions))
     }
 
     return { tick }
