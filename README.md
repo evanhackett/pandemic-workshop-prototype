@@ -49,7 +49,9 @@
 * Made actor module ✅
 
 # Work sesison eight, Tuesday 4/28
-* Add an infected actor to infect the other actors ❌
+* Add an infected actor to infect the other actors ❌ 
+* We started trying to test the infect logic at the unit level instead of the simulation level which lead us to chasing our tails a bit. 
+* Invented a new guiding principal from this. ✅
 
 # Work sesison nine, ?? 4/??
 * Write an integration test for actor infection in simulation.js
