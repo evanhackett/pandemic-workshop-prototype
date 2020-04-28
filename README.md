@@ -1,3 +1,9 @@
+# Guiding Principles!
+
+1. Always start with tests at the highest level (as close to index.js as possible). Then work down to lower levels, eventually hitting unit tests.
+1. Write code that makes testing easier.
+1. Avoid setters and getters?
+
 # Work session one!
 ## What are we trying to do?
 
@@ -42,10 +48,15 @@
 * Deep dive on destructuring, scope, closures and mutablilty ✅👍
 * Made actor module ✅
 
-# Work sesison eight, Weekend 4/2-
-* Add an infected actor to infect the other actors 
+# Work sesison eight, Tuesday 4/28
+* Add an infected actor to infect the other actors ❌
+
+# Work sesison nine, ?? 4/??
+* Write an integration test for actor infection in simulation.js
+
 
 ## Next steps
+* In the future constructors returned by factories should be capitalized 
 * Makes walls count
 * Rethink what the assignment is. What should the student do?
 * Special event listening system that is observered by other things. eg graphs or counters 

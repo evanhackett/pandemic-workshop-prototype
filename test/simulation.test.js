@@ -6,6 +6,8 @@ const randomF = require('../src/random')
 const randomPos0Dir1 = randomF({ randomPos: () => 0, randomDir: () => 0.999999, GRID_RESOLUTION: 100 })
 
 test('simulation.tick() should move them mf actors and invoke supplied callback passing in a frozen copy of the actors array', t => {
+  t.plan(4)
+
   const simulation = simulationF({ NUM_ACTORS: 100, random: randomPos0Dir1 })()
 
   // By checking their position twice we know that they inited to x: 0, y: 0
@@ -21,3 +23,5 @@ test('simulation.tick() should move them mf actors and invoke supplied callback 
 
   t.end()
 })
+
+// We need to write an integration test for infecting actors here, first 

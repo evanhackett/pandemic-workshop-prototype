@@ -14,6 +14,10 @@ module.exports = function ({ NUM_ACTORS, random }) {
 
     function tick(cb) {
       const newPositions = actors.map(actor => actor.move())
+
+      // How do we infect???
+      // const newerPositions = actors.map(actor => actor.infect(newPostitions) or something? )
+
       cb(Object.freeze(newPositions))
     }
 
