@@ -53,8 +53,9 @@
 * We started trying to test the infect logic at the unit level instead of the simulation level which lead us to chasing our tails a bit. 
 * Invented a new guiding principal from this. ✅
 
-# Work sesison nine, ?? 4/??
-* Write an integration test for actor infection in simulation.js
+# Work sesison nine, Monday 5/04
+* Refactor to almost pure fp ✅
+* Add infect function ✅
 
 
 ## Next steps
