@@ -10,7 +10,7 @@ module.exports = function (deps) {
         x += randomX
         y += randomY
         return { x: x, y: y, color: constants.colors.GREEN }
-      },
+      }
     })
   }
 }

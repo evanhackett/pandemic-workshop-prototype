@@ -1,18 +1,17 @@
 const actorF = require('./actor')
 
 module.exports = function ({ NUM_ACTORS, random }) {
-
   const actor = actorF({ randomDir: random.direction })
 
-  function simulation() {
+  function simulation () {
     const actors = []
 
     for (let i = 0; i < NUM_ACTORS; i++) {
-      let { x, y } = random.position()
+      const { x, y } = random.position()
       actors.push(actor(x, y))
     }
 
-    function tick(cb) {
+    function tick (cb) {
       const newPositions = actors.map(actor => actor.move())
 
       // How do we infect???
@@ -25,6 +24,3 @@ module.exports = function ({ NUM_ACTORS, random }) {
   }
   return simulation
 }
-
-
-

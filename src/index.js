@@ -6,9 +6,7 @@ const simulation = require('./simulation')({ NUM_ACTORS: constants.NUM_ACTORS, r
 const canvas = document.getElementById('canvas')
 
 const interval = setInterval(function () {
-
   simulation.tick(actors => {
     draw(canvas, actors)
   })
-
 }, constants.INTERVAL)

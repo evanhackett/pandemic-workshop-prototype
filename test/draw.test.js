@@ -16,17 +16,17 @@ test('actor should be drawn to canvas in the right place with the right argument
           t.equal(height, cellSize)
         },
         fillStyle: () => { },
-        clearRect: () => { },
+        clearRect: () => { }
       }
     },
     width: 100,
-    height: 100,
+    height: 100
   }
   draw(canvas, actors)
   t.end()
 })
 
-function colorToRGBString(color) {
+function colorToRGBString (color) {
   return `rgb(${color.r},${color.g},${color.b})`
 }
 
@@ -44,13 +44,13 @@ test('All actors in the actor list should be drawn to canvas with the right colo
           testState.push({ x: x, y: y, color: ctx.fillStyle })
         },
         fillStyle: null,
-        clearRect: () => { },
+        clearRect: () => { }
       }
 
       return ctx
     },
     width: 100,
-    height: 100,
+    height: 100
   }
 
   draw(canvas, actors)

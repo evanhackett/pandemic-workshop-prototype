@@ -24,4 +24,4 @@ test('simulation.tick() should move them mf actors and invoke supplied callback 
   t.end()
 })
 
-// We need to write an integration test for infecting actors here, first 
+// We need to write an integration test for infecting actors here, first

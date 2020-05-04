@@ -9,5 +9,4 @@ module.exports = function (canvas, actors) {
     ctx.fillStyle = `rgb(${actor.color.r},${actor.color.g},${actor.color.b})`
     ctx.fillRect(actor.x * cellSize, actor.y * cellSize, cellSize, cellSize)
   })
-
 }
