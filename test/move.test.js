@@ -9,3 +9,30 @@ test('should return new array with updated positions', t => {
   t.deepEqual(actors, [{ x: 1, y: 1, color: constants.colors.GREEN }, { x: 1, y: 1, color: constants.colors.GREEN }])
   t.end()
 })
+
+test('Medics should not move if there are not infect actors present', t =>{
+  let actors = [{ x: 0, y: 0, color: constants.colors.WHITE }, { x: 0, y: 0, color: constants.colors.WHITE }]
+  actors = move(actors)
+  t.deepEqual(actors, [{ x: 0, y: 0, color: constants.colors.WHITE }, { x: 0, y: 0, color: constants.colors.WHITE }])
+  t.end()
+})
+
+test('Medics should move in the direction of the closest infected actor', t =>{
+  let actors = [{ x: 0, y: 0, color: constants.colors.WHITE }, { x: 5, y: 5, color: constants.colors.RED }]
+  actors = move(actors)
+  t.deepEqual(actors, [{ x: 1, y: 1, color: constants.colors.WHITE }, { x: 6, y: 6, color: constants.colors.RED }])
+
+  actors = [{ x: 5, y: 5, color: constants.colors.WHITE }, { x: 0, y: 0, color: constants.colors.RED }]
+  actors = move(actors)
+  t.deepEqual(actors, [{ x: 4, y: 4, color: constants.colors.WHITE }, { x: 1, y: 1, color: constants.colors.RED }])
+
+  actors = [
+    { x: 5, y: 5, color: constants.colors.WHITE }, 
+    { x: 0, y: 0, color: constants.colors.RED },
+    { x: 20, y: 20, color: constants.colors.RED },
+  ]
+  actors = move(actors)
+  t.deepEqual(actors[0], { x: 4, y: 4, color: constants.colors.WHITE })
+
+  t.end()
+})

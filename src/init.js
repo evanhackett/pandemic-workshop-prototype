@@ -1,4 +1,6 @@
-module.exports = ({ randomPos, colors }) => {
+const colors = require('./constants').colors
+
+module.exports = ({ randomPos }) => {
   return (NUM_ACTORS, START_INFECTED) => {
     const actors = []
     for (let i = 0; i < NUM_ACTORS - START_INFECTED; i++) {

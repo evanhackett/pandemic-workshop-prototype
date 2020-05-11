@@ -1,8 +1,9 @@
 # Guiding Principles!
 
+1. Ship It 🚀
+1. Do the simple thing first
 1. Always start with tests at the highest level (as close to index.js as possible). Then work down to lower levels, eventually hitting unit tests.
 1. Write code that makes testing easier.
-1. Avoid setters and getters?
 
 # Work session one!
 ## What are we trying to do?
@@ -57,11 +58,17 @@
 * Refactor to almost pure fp ✅
 * Add infect function ✅
 
+# Work sesison ten, Sunday 5/10
+* Add utils funcitons ✅
+* Require constants instead of injecting them ✅
+* Add Medic
+* Add Heal function
 
 ## Next steps
+* Try out [RITEway](https://github.com/ericelliott/riteway)
+* Refactor to `import ... from ...`
 * In the future constructors returned by factories should be capitalized 
 * Makes walls count
-* Rethink what the assignment is. What should the student do?
 * Special event listening system that is observered by other things. eg graphs or counters 
 * Make it so medics do not share the same target, somehow.
 * The medics and the OBSERVER PATTERN???
@@ -71,3 +78,8 @@
 ## The future
 * Podcast about the observer patern that leads to the workshop
 * Probably release this one frees
+
+# What is the assignment? Here are some ideas:
+* students refactor OOP solution into FP solution
+* The video of us going through the refactor again
+* We give them the starting and ending postition so they can follow along
