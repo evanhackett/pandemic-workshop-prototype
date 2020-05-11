@@ -61,8 +61,9 @@
 # Work sesison ten, Sunday 5/10
 * Add utils funcitons ✅
 * Require constants instead of injecting them ✅
-* Add Medic
-* Add Heal function
+* Add Medic ✅
+* Add Heal function ✅
+* Removed draw tests because they were excessive ✅
 
 ## Next steps
 * Try out [RITEway](https://github.com/ericelliott/riteway)

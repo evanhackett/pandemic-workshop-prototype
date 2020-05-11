@@ -4,13 +4,12 @@ const random = require('./random')({ randomDir: Math.random, randomPos: Math.ran
 const move = require('./move')({ randomDir: random.direction })
 const init = require('./init')({ randomPos: random.position })
 const infect = require('./infect')
-// const heal = require('./heal')
+const heal = require('./heal')
 const canvas = document.getElementById('canvas')
 
-let actors = init(constants.NUM_ACTORS, constants.START_INFECTED)
+let actors = init(constants.NUM_ACTORS, constants.START_INFECTED, constants.START_MEDICS)
 
 setInterval(function () {
-  // actors = heal(infect(move(actors)))
-  actors = infect(move(actors))
+  actors = heal(infect(move(actors)))
   draw(canvas, actors)
 }, constants.INTERVAL)
