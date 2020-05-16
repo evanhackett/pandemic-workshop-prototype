@@ -65,11 +65,14 @@
 * Add Heal function ✅
 * Removed draw tests because they were excessive ✅
 
+# Work sesison eleven, Sunday 5/16
+* Makes walls count ✅
+* Refactored random.direction to random.moveActor ✅
+
 ## Next steps
 * Try out [RITEway](https://github.com/ericelliott/riteway)
 * Refactor to `import ... from ...`
 * In the future constructors returned by factories should be capitalized 
-* Makes walls count
 * Special event listening system that is observered by other things. eg graphs or counters 
 * Make it so medics do not share the same target, somehow.
 * The medics and the OBSERVER PATTERN???

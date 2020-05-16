@@ -18,23 +18,18 @@ test('random.position returns a position between 0 and GRID_RESOLUTION', t => {
   t.end()
 })
 
-test('random module should return an object with "direction" method', t => {
-  const random = randomF({ GRID_RESOLUTION: 100 })
-  t.equal(typeof random.direction === 'function', true)
-  t.end()
-})
+test('moveActor should move the actor in a random direction, without going past the walls', t => {
+  let random = randomF({ GRID_RESOLUTION: 10, randomDir: () => 0 })
+  t.deepEqual(random.moveActor({ x: 0, y: 0 }), { x: 1, y: 1 })
 
-test('random.direction should return either -1, 0 or 1', t => {
-  let random = randomF({ randomDir: () => 0 })
-  t.deepEqual(random.direction(), { x: -1, y: -1 })
-  t.deepEqual(random.direction(), { x: -1, y: -1 })
+  random = randomF({ GRID_RESOLUTION: 10, randomDir: () => 0.5 })
+  t.deepEqual(random.moveActor({ x: 0, y: 0 }), { x: 0, y: 0 })
 
-  random = randomF({ randomDir: () => 0.5 })
-  t.deepEqual(random.direction(), { x: 0, y: 0 })
-  t.deepEqual(random.direction(), { x: 0, y: 0 })
+  random = randomF({ GRID_RESOLUTION: 10, randomDir: () => 0.99999 })
+  t.deepEqual(random.moveActor({ x: 4, y: 4 }), { x: 5, y: 5 })
 
-  random = randomF({ randomDir: () => 0.999999 })
-  t.deepEqual(random.direction(), { x: 1, y: 1 })
-  t.deepEqual(random.direction(), { x: 1, y: 1 })
+  random = randomF({ GRID_RESOLUTION: 10, randomDir: () => 0.99999 })
+  t.deepEqual(random.moveActor({ x: 9, y: 9 }), { x: 8, y: 8 })
+
   t.end()
 })

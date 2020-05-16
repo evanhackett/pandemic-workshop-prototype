@@ -3,7 +3,7 @@ module.exports = Object.freeze({
   NUM_ACTORS: 1000,
   INTERVAL: 150,
   START_INFECTED: 900,
-  START_MEDICS: 100,
+  START_MEDICS: 150,
   colors: {
     RED: Object.freeze({ r: 255, g: 0, b: 0 }),
     GREEN: Object.freeze({ r: 0, g: 255, b: 0 }),
