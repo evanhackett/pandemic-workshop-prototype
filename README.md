@@ -5,6 +5,20 @@
 1. Always start with tests at the highest level (as close to index.js as possible). Then work down to lower levels, eventually hitting unit tests.
 1. Write code that makes testing easier.
 
+## How did we get here?
+* Seat time counts, Sometimes it's impossible to not learn things the hard way
+
+# Lessons Learned
+* Prototype first, but at some point spend time upfront on architecture design
+* It's not a great idea to just jump into writing code again after the first prototype
+* Testing too much holds you back more than it helps
+* Strive for loose coupling to avoid propagating changes
+
+# Takeaways
+* When prototyping don't worry about having tests.
+* After the prototype Achitecture matters. 
+* We have a lot to learn about practical Achitecture.
+
 # Work session one!
 ## What are we trying to do?
 
@@ -69,7 +83,18 @@
 * Makes walls count ✅
 * Refactored random.direction to random.moveActor ✅
 
+# Work sesison twelve, Sunday 5/20
+* Fix the medic stacking
+### Ideas:
+* Max One per square -> Most behavior change
+* - `actors[1][0] === {color: 'green'}`
+* Max Stack of two per square 
+* Only medics can't stack
+* Fancy target information sharing data structure
+* Use tables if NEEDED
+
 ## Next steps
+* Medics become a roving healing squad of doom, that isn't super effective, is this is another bottom up refactor?
 * Try out [RITEway](https://github.com/ericelliott/riteway)
 * Refactor to `import ... from ...`
 * In the future constructors returned by factories should be capitalized 
