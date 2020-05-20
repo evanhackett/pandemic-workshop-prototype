@@ -84,7 +84,7 @@
 * Refactored random.direction to random.moveActor ✅
 
 # Work sesison twelve, Sunday 5/20
-* Fix the medic stacking
+* Fix the medic stacking ❌
 ### Ideas:
 * Max One per square -> Most behavior change
 * - `actors[1][0] === {color: 'green'}`
@@ -92,6 +92,11 @@
 * Only medics can't stack
 * Fancy target information sharing data structure
 * Use tables if NEEDED
+
+# Work session thriteen, 5/xx
+* Finish the prototype
+* Don't worry about making it clean
+* After we FINISH the protype think about the interface and architecture 
 
 ## Next steps
 * Medics become a roving healing squad of doom, that isn't super effective, is this is another bottom up refactor?
