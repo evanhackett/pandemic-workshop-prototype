@@ -1,3 +1,5 @@
+'use strict'
+
 const constants = require('./constants')
 const draw = require('./draw')
 const random = require('./random')({ randomDir: Math.random, randomPos: Math.random, GRID_RESOLUTION: constants.GRID_RESOLUTION })

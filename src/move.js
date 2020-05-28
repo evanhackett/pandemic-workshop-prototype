@@ -1,3 +1,4 @@
+'use strict'
 const { isInfected, isMedic } = require('./utils')
 
 module.exports = ({ moveActor }) => {
@@ -35,19 +36,27 @@ module.exports = ({ moveActor }) => {
   }
 
   return actors => {
-    return Object.freeze(actors.map(actor => {
-      if (isMedic(actor)) {
-        // Find a target direction
-        const target = getClosestActor(actor, actors)
-        const position = getNewPosition(actor, target)
-        return Object.freeze({
-          x: position.x,
-          y: position.y,
-          color: actor.color
-        })
-      } else {
-        return Object.freeze(moveActor(actor))
-      }
-    }))
+    // return Object.freeze(actors.map(actor => {
+    //   if (isMedic(actor)) {
+    //     // Find a target direction
+    //     const target = getClosestActor(actor, actors)
+    //     const position = getNewPosition(actor, target)
+    //     return Object.freeze({
+    //       x: position.x,
+    //       y: position.y,
+    //       color: actor.color
+    //     })
+    //   } else {
+    //     return Object.freeze(moveActor(actor, actors))
+    //   }
+    // }))
+
+    actors.forEach(actor => {
+      const newPosition = moveActor(actor, actors)
+      actor.x = newPosition.x
+      actor.y = newPosition.y
+    })
+
+    return actors
   }
 }

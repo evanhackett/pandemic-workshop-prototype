@@ -93,7 +93,15 @@
 * Fancy target information sharing data structure
 * Use tables if NEEDED
 
-# Work session thriteen, 5/xx
+# Work session thriteen, 5/28
+* Fixed actor stacking ✅
+
+# Work session fourteen, 5/xx - 6/xx
+* Fix the medic stacking
+* Fix infect logic 
+* Use the same function for infect and medic?  
+
+# All sessions
 * Finish the prototype
 * Don't worry about making it clean
 * After we FINISH the protype think about the interface and architecture 
