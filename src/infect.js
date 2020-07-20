@@ -1,5 +1,3 @@
-'use strict'
-
 const { isInfected, isMedic } = require('./utils')
 const colors = require('./constants').colors
  
