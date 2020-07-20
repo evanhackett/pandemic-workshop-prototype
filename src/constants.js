@@ -1,8 +1,8 @@
 module.exports = Object.freeze({
   GRID_RESOLUTION: 100,
-  NUM_ACTORS: 1000,
+  START_HEALTHY: 500,
   INTERVAL: 150,
-  START_INFECTED: 900,
+  START_INFECTED: 500,
   START_MEDICS: 150,
   colors: {
     RED: Object.freeze({ r: 255, g: 0, b: 0 }),

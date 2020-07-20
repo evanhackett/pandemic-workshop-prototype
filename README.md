@@ -93,14 +93,11 @@
 * Fancy target information sharing data structure
 * Use tables if NEEDED
 
-<<<<<<< HEAD
-=======
 # Work session thriteen, 5/xx
 * Finish the prototype
 * Don't worry about making it clean
 * After we FINISH the protype think about the interface and architecture 
 
->>>>>>> parent of bbe0679... actors can't move to an occupied square
 ## Next steps
 * Medics become a roving healing squad of doom, that isn't super effective, is this is another bottom up refactor?
 * Try out [RITEway](https://github.com/ericelliott/riteway)

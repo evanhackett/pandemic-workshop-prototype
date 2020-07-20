@@ -1,9 +1,9 @@
 const colors = require('./constants').colors
 
 module.exports = ({ randomPos }) => {
-  return (NUM_ACTORS, START_INFECTED, START_MEDICS) => {
+  return (START_HEALTHY, START_INFECTED, START_MEDICS) => {
     const actors = []
-    for (let i = 0; i < NUM_ACTORS - START_INFECTED - START_MEDICS; i++) {
+    for (let i = 0; i < START_HEALTHY; i++) {
       const { x, y } = randomPos()
       actors.push(Object.freeze({ x, y, color: colors.GREEN }))
     }
