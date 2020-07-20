@@ -1,31 +1,53 @@
-<body>
-    <canvas id="canvas" width="700" height="700"></canvas>
-    <div>
-        <span>Infected: </span>
-        <span id="infectedCount"></span>
-    </div>
+<html>
+    <head>
+        <title>Pandemic Playground</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Pandemic Playground</h1>
 
-    <div>
-        <span>Healthy: </span>
-        <span id="healthyCount"></span>
-    </div>
+            <canvas id="canvas" width="700" height="700"></canvas>
+        
+            <div class="stats">
+                <div>
+                    <span>Infected: </span>
+                    <span id="infectedCount"></span>
+                </div>
+            
+                <div>
+                    <span>Healthy: </span>
+                    <span id="healthyCount"></span>
+                </div>
+            
+                <div>
+                    <span>Turns: </span>
+                    <span id="turnCount"></span>
+                </div>
+            </div>
+        
+            <div class="slidecontainer">
+                <span>Healthy: </span>
+                <input type="range" min="0" max="1000" value="500" class="slider" id="healthySlider">
+            </div>
+        
+            <div class="slidecontainer">
+                <span>Infected: </span>
+                <input type="range" min="0" max="1000" value="100" class="slider" id="infectedSlider">
+            </div>
+        
+            <div class="slidecontainer">
+                <span>Medics: </span>
+                <input type="range" min="0" max="500" value="10" class="slider" id="medicSlider">
+            </div>
 
-    <div>
-        <span>Turns: </span>
-        <span id="turnCount"></span>
-    </div>
+            <div class="instructions">
+                <p>Adjust the sliders to vary the pandemic starting conditions. Green represents a healthy organism, red represents an infected organism, and white represents a medic. Medics can heal infected organisms, and infected organisms will spread the infection to others.</p>
+            </div>
+        </div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
 
-    <div class="slidecontainer">
-        <input type="range" min="0" max="1000" value="500" class="slider" id="healthySlider">
-    </div>
-
-    <div class="slidecontainer">
-        <input type="range" min="0" max="1000" value="100" class="slider" id="infectedSlider">
-    </div>
-
-    <div class="slidecontainer">
-        <input type="range" min="0" max="500" value="10" class="slider" id="medicSlider">
-    </div>
-
-    <script src="bundle.js"></script>
-</body>
