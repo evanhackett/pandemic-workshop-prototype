@@ -12,10 +12,13 @@ const turnCountNode = document.getElementById('turnCount')
 const infectedSlider = document.getElementById('infectedSlider')
 const healthySlider = document.getElementById('healthySlider')
 const medicSlider = document.getElementById('medicSlider')
+const infectedText = document.getElementById('infectedText')
+const healthyText = document.getElementById('healthyText')
+const medicText = document.getElementById('medicText')
 let turnCount = 0
 let actors = null
 
-initialize()
+initializeSlider()
 
 setInterval(function () {
   draw(canvas, actors)
@@ -35,11 +38,26 @@ function updateStats (actors, infectedCountNode, healthyCountNode) {
 
 const count = (xs, predicate) => xs.reduce((acc, x) => predicate(x) ? acc + 1 : acc, 0)
 
-function initialize () {
+function initializeSlider () {
   actors = init(healthySlider.value, infectedSlider.value, medicSlider.value)
+  healthyText.value = healthySlider.value
+  infectedText.value = infectedSlider.value
+  medicText.value = medicSlider.value
   turnCount = 0
 }
 
-healthySlider.oninput = initialize
-infectedSlider.oninput = initialize
-medicSlider.oninput = initialize
+function initializeText () {
+  actors = init(healthyText.value, infectedText.value, medicText.value)
+  healthySlider.value = healthyText.value
+  infectedSlider.value = infectedText.value
+  medicSlider.value = medicText.value
+  turnCount = 0
+}
+
+healthySlider.oninput = initializeSlider
+infectedSlider.oninput = initializeSlider
+medicSlider.oninput = initializeSlider
+
+healthyText.oninput = initializeText
+infectedText.oninput = initializeText
+medicText.oninput = initializeText
